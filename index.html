@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+    <title>Frontend Mentor | Tip calculator app</title>
+
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+</head>
+
+<body>
+<main>
+
+    <h1><img src="./images/logo.svg" id="logo-img" alt="logo-for-calculator" /></h1>
+
+    <section class="calculator-section">
+        <article class="input-block">
+            <form class="bill-input-form">
+                <label for="bill-amount">Bill</label>
+                <input class="input-box" type="number" name="amount" id="bill-amount" placeholder="0"
+                       aria-label="bill-amount" min="0" />
+            </form>
+            <form class="tip-selection-form">
+                <label>Select Tip %</label>
+                <div class="percentage-options">
+                    <button type="button" class="btn_5perc" aria-label="add-5-percentage">
+                        5
+                    </button>
+                    <button type="button" class="btn_10perc" aria-label="add-10-percentage">
+                        10
+                    </button>
+                    <button type="button" class="btn_15perc" aria-label="add-15-percentage">
+                        15
+                    </button>
+                    <button type="button" class="btn_25perc" aria-label="add-25-percentage">
+                        25
+                    </button>
+                    <button type="button" class="btn_50perc" aria-label="add-50-percentage">
+                        50
+                    </button>
+                    <input id="custom" class="custom-perc-input" type="number" max="100" placeholder="Custom"
+                           aria-label="enter-custom-input" />
+                </div>
+            </form>
+
+            <form class="people-count-form">
+                <label for="people-count">Number of People <span>Can't be zero</span></label>
+                <input class="input-box" type="number" name="number-people" id="people-count" placeholder="0"
+                       aria-label="enter-number-of-people" required aria-required="true" min="0" max="100" />
+            </form>
+        </article>
+
+        <article class="result-display-block">
+            <div class="tip-display">
+                <div>
+                    <p class="display-text">Tip Amount</p>
+                    <p>/ person</p>
+                </div>
+                <p class="amount show-tip">
+                    $0.00
+                </p>
+            </div>
+
+            <div class="total-display">
+                <div>
+                    <p class="display-text">Total</p>
+                    <p>/ person</p>
+                </div>
+                <p class="amount show-total">
+                    $0.00
+                </p>
+            </div>
+            <button class="reset-button" aria-label="reset" disabled>
+                reset
+            </button>
+        </article>
+    </section>
+
+</main>
+<script src="./desc/script.js"></script>
+</body>
+</html>

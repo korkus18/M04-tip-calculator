@@ -1,0 +1,268 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap");
+
+:root {
+    --Strong-cyan: hsl(172, 67%, 45%);
+    --Very-dark-cyan: hsl(183, 100%, 15%);
+    --Dark-grayish-cyan-1: hsl(184, 14%, 56%);
+    --Light-grayish-cyan-1: hsl(185, 41%, 84%);
+    --Very-light-grayish-cyan: hsl(189, 41%, 97%);
+    --White: hsl(0, 0%, 100%);
+    --red: rgb(255, 102, 102);
+}
+
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--Light-grayish-cyan-1);
+    font-family: "Space Mono", "Courier New", monospace;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+
+    min-height: 100vh;
+    width: 100%;
+}
+
+#logo-img {
+    display: block;
+    margin: 3rem auto;
+}
+
+
+section.calculator-section {
+    background-color: var(--White);
+    border-radius: 5% 5% 0 0;
+    padding: 1.5rem;
+    width: 100vw;
+
+    display: flex;
+    flex-direction: column;
+    transition: all 0.2s linear;
+}
+
+form {
+    position: relative;
+    margin-top: 1.4rem;
+}
+
+label {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--Dark-grayish-cyan-1);
+    position: relative;
+    display: block;
+}
+
+label span {
+    display: none;
+}
+
+label span.empty {
+    display: inline;
+    color: var(--red);
+    position: absolute;
+    right: 0;
+}
+
+.people-count-form #people-count.empty {
+    border: 3px solid rgb(255, 102, 102, 0.5);
+}
+
+form input:focus {
+    border: 3px solid hsla(172, 67%, 45%, 0.445);
+    border-radius: 5px;
+    outline: none;
+}
+
+form .input-box {
+    color: var(--Very-dark-cyan);
+    background-color: var(--Very-light-grayish-cyan);
+    text-align: right;
+    border-radius: 5px;
+    border: 3px solid transparent;
+
+    font-family: "Space Mono", "Courier New", monospace;
+    font-size: 1.4rem;
+    font-weight: 700;
+
+    padding: 5px;
+    max-width: 100%;
+    width: 100%;
+}
+
+.bill-input-form::before,
+.people-count-form::before {
+    position: absolute;
+    top: 38px;
+    left: 13px;
+    font-size: 1.1rem;
+    color: var(--Dark-grayish-cyan-1);
+    opacity: 0.5;
+}
+
+form.bill-input-form::before {
+    display: inline-block;
+    font-family: "Font Awesome 5 Free";
+    content: "\f155";
+    font-weight: 700;
+}
+
+form.people-count-form::before {
+    display: inline-block;
+    font-family: "Font Awesome 5 Free";
+    content: "\f406";
+    font-weight: 700;
+}
+
+.percentage-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    max-width: 100%;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.percentage-options > button,
+.custom-perc-input {
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    font-family: "Space Mono", "Courier New", monospace;
+    font-weight: bold;
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+
+.percentage-options > button {
+    color: var(--Very-light-grayish-cyan);
+    background-color: var(--Very-dark-cyan);
+    letter-spacing: 1px;
+}
+
+.percentage-options > button::after {
+    content: "%";
+}
+
+.percentage-options > button:hover {
+    background-color: var(--Very-light-grayish-cyan);
+    color: var(--Very-dark-cyan);
+}
+
+.percentage-options > button.click {
+    background-color: var(--Strong-cyan);
+}
+
+.custom-perc-input {
+    width: 100%;
+    text-align: center;
+    background-color: var(--Very-light-grayish-cyan);
+    color: var(--Dark-grayish-cyan-1);
+}
+
+article.result-display-block {
+    background-color: var(--Very-dark-cyan);
+    border-radius: 10px;
+    margin-top: 5%;
+    padding: 1.1rem;
+}
+
+.display-text {
+    color: var(--Very-light-grayish-cyan);
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.result-display-block > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem 0;
+}
+
+p:not(.amount, .display-text) {
+    color: var(--Dark-grayish-cyan-1);
+}
+
+p.amount {
+    color: var(--Strong-cyan);
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+/* reset button */
+button.reset-button {
+    max-width: 100%;
+    width: 100%;
+    padding: 5px;
+    font-family: "Space Mono", "Courier New", monospace;
+    font-weight: bold;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+
+    border-radius: 5px;
+    border: none;
+    background-color: var(--Dark-grayish-cyan-1);
+}
+
+button.reset-button:enabled {
+    background-color: var(--Strong-cyan);
+    cursor: pointer;
+}
+
+button.reset-button:enabled:hover {
+    background-color: var(--Dark-grayish-cyan-1);
+}
+
+footer {
+    display: none;
+}
+
+@media screen and (min-width: 768px) {
+    body {
+        justify-content: center;
+        align-items: center;
+        display: flex;
+    }
+
+
+    section.calculator-section {
+        flex-direction: row;
+        justify-content: space-between;
+        max-width: 850px;
+        width: 95%;
+        border-radius: 20px;
+        padding: 2rem;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    .calculator-section > article {
+        flex-basis: 47%;
+        margin: 0;
+    }
+
+    .percentage-options {
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 1.1rem;
+    }
+
+    button.reset-button {
+        margin-top: 8rem;
+    }
+
+
+    button.reset-button:active {
+        transform: translateY(3px);
+        transition: all 0.2s linear;
+        box-shadow: 0 3px var(--Very-dark-cyan);
+    }
+}
