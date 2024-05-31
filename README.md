@@ -24,7 +24,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [GitHub Repo](https://github.com/korkus18/M01-NFT-card-tailwind/)
+- Solution URL: [GitHub Repo](https://github.com/korkus18/M04-tip-calculator/)
 
 ## My process
 
